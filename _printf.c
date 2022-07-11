@@ -23,6 +23,13 @@ int _printf(const char *format, ...)
 		{'s',printstring},
 		{'d',printint},
 		{'i',printint},
+		{'u',printint},
+		{'o',printint},
+		{'x',printint},
+		{'X',printint},
+		{'p',printint},
+		{'%',printint},
+		{'r',printint},
 		{0, NULL},
 	};
 	va_start(argp, format);
@@ -36,16 +43,14 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-				for(j = 0; j < 3; j++)
-				{
-					if (format[i + 1] == tabtype[j].form)
-					{
-						r = tabtype[j].f(argp);
-						i = i + 2;
-					}
-				}
+			for(j = 0; (tabtype[j].form != 0) && (tabtype[j].form != format[i + 1]); j++)
+			{
+				;
+			}
+			r = tabtype[j].f(argp);
+			i = i + 2;
 		}
-			_putchar(format[i]);
+		_putchar(format[i]);
 	}
 	va_end(argp);
 	return (r);
