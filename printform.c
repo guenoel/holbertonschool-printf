@@ -15,7 +15,7 @@ int printstring(va_list args)
 	for(i = 0; s[i] != '\0'; i++)
 	_putchar(s[i]);
 	_putchar(s[i]);
-	return (i);
+	return (i + 1);
 }
 
 int printint(va_list args)
