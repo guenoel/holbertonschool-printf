@@ -27,4 +27,3 @@ int printint(va_list args)
 	_putchar(i + '0');
 	return (1);
 }
-
