@@ -10,7 +10,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i, j, r;
+	int i, j;
 	struct match {
 		char form;
 		int (*f)(va_list args);
@@ -47,11 +47,11 @@ int _printf(const char *format, ...)
 			{
 				;
 			}
-			r = tabtype[j].f(argp);
+			tabtype[j].f(argp);
 			i = i + 2;
 		}
 		_putchar(format[i]);
 	}
 	va_end(argp);
-	return (r);
+	return (i);
 }
