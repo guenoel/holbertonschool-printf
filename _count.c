@@ -1,4 +1,4 @@
-#include "_printf.h"
+#include "main.h"
 
 /**
  * _count - count the characters numbers 
@@ -6,7 +6,7 @@
  * Return:int
  */
 
-int _count(char *c)
+int _count(const char *c)
 {
 	int i;
 		i = 0;
