@@ -39,8 +39,6 @@ int _printf(const char *format, ...)
 		_putchar('\n');
 		return (-1);
 	}
-	printf("ancienne longueur c1 : %i\n", c1);
-	printf("ancienne longueur c2 : %i\n", c2);
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -51,13 +49,10 @@ int _printf(const char *format, ...)
 				;
 			}
 			c1 = c1 + (tabtype[j].f(argp));
-	printf("longueur c1 in loop : %i\n", c1);
 			i = i + 2;
 		}
 		c2 = c2 + (_putchar(format[i]));
 	}
-	printf("longueur c1 : %i\n", c1);
-	printf("longueur c2 : %i\n", c2);
 	va_end(argp);
 	return (c1 + c2);
 }
