@@ -42,17 +42,17 @@ int printstring(va_list args)
 
 int printint(va_list args)
 {
-	int i;
+	int i = 0;
 	/*unsigned int j;*/
 
 	int num = va_arg(args, int);
 
 	if (num < 0)
 	{
-		_putchar('-');
+		i += _putchar('-');
 		num = _abs(num);
 	}
-	i = printnum(num);
+	i += printnum(num);
 	return (i);
 }
 

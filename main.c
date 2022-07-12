@@ -7,8 +7,7 @@
  */
 int main(void)
 {
-    int len;
-    int len2;
+    int len, len2, len3, len4;
     unsigned int ui;
     void *addr;
     
@@ -18,8 +17,10 @@ int main(void)
     addr = (void *)0x7ffe637541f0;
     _printf("Length:[%d, %i]\n", len, len);
     printf("Length:[%d, %i]\n", len2, len2);
-    _printf("Negative:[%d]\n", -762534);
-    printf("Negative:[%d]\n", -762534);
+    len3 = _printf("Negative:[%d]\n", -762534);
+    len4 = printf("Negative:[%d]\n", -762534);
+    _printf("Length:[%d, %i]\n", len3, len3);
+    printf("Length:[%d, %i]\n", len4, len4);
 	_printf("int minimum: %d\n", INT_MIN);
 	printf("int minimum: %d\n", INT_MIN);
 	_printf("int maximum: %d\n", INT_MAX);
