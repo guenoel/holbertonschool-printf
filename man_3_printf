@@ -1,0 +1,15 @@
+MAN _printf
+
+Description:  The _printf function print a character or a chain of characters gived by the user.
+Return Value:
+Function return number of character printed without couting final nul byte “\0” in the chains.
+
+Exemple
+printf("%d", num);
+
+Attribute character
+ Character % followed by one or more attribute follow :
+%c character
+%s String
+%i Integer number
+%d Decimal number
