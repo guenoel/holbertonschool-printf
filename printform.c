@@ -19,11 +19,15 @@ int printstring(va_list args)
 
 int printint(va_list args)
 {
-	int i, d;
-	
-	i = (va_arg(args, int));
-	d = (i % 10);
-	printf("Le chiffre des unités est: %i\n", d);
-	_putchar(d);
+	printnum(va_arg(args, int));
 	return (1);
 }
+
+void printnum(int num)
+{
+	if ((num / 10) > 0)
+		printnum(num / 10);
+	_putchar((num % 10) + '0');
+	return;
+}
+
