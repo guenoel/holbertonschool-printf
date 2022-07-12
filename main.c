@@ -20,6 +20,10 @@ int main(void)
     printf("Length:[%d, %i]\n", len2, len2);
     _printf("Negative:[%d]\n", -762534);
     printf("Negative:[%d]\n", -762534);
+	_printf("int minimum: %d\n", INT_MIN);
+	printf("int minimum: %d\n", INT_MIN);
+	_printf("int maximum: %d\n", INT_MAX);
+	printf("int maximum: %d\n", INT_MAX);
     _printf("Unsigned:[%u]\n", ui);
     printf("Unsigned:[%u]\n", ui);
     _printf("Unsigned octal:[%o]\n", ui);

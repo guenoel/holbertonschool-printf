@@ -27,4 +27,5 @@ int printstring(va_list args);
 int printint(va_list args);
 int printnum(int num);
 int printpercent(va_list args);
+int _abs(int n);
 #endif /* MAIN_H */

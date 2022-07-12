@@ -43,9 +43,15 @@ int printstring(va_list args)
 int printint(va_list args)
 {
 	int i;
+	/*unsigned int j;*/
 
 	int num = va_arg(args, int);
 
+	if (num < 0)
+	{
+		_putchar('-');
+		num = _abs(num);
+	}
 	i = printnum(num);
 	return (i);
 }
