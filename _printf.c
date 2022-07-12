@@ -10,14 +10,13 @@
 
 int _printf(const char *format, ...)
 {
-	int i, j;
+	int i, j, c1, c2;
 	struct match {
 		char form;
 		int (*f)(va_list args);
 	};
 
 	va_list argp;
-
 	struct match tabtype[] = {
 		{'c',printchar},
 		{'s',printstring},
@@ -32,6 +31,8 @@ int _printf(const char *format, ...)
 		{'r',printint},
 		{0, NULL},
 	};
+	c1 = 0;
+	c2 = 0;
 	va_start(argp, format);
 	if (format == NULL)
 	{
@@ -47,11 +48,13 @@ int _printf(const char *format, ...)
 			{
 				;
 			}
-			tabtype[j].f(argp);
+			c1 = c1 + (tabtype[j].f(argp));
 			i = i + 2;
 		}
-		_putchar(format[i]);
+		c2 = c2 + (_putchar(format[i]));
 	}
+	printf("longueur c1 : %i\n", c1);
+	printf("longueur c2 : %i\n", c2);
 	va_end(argp);
-	return (i);
+	return (c1 + c2);
 }
