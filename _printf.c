@@ -48,11 +48,13 @@ int _printf(const char *format, ...)
 			{
 				;
 			}
-			c1 = (tabtype[j].f(argp));
+			c1 = c1 + (tabtype[j].f(argp));
 			i = i + 2;
 		}
 		c2 = c2 + (_putchar(format[i]));
 	}
+		printf("compteur des arguments: %i\n", c1);
+		printf("compteur de format: %i\n", c2);
 	va_end(argp);
 	return (c1 + c2);
 }
