@@ -11,8 +11,8 @@ C Language - Standard gnu89
 
 ## Collaboration
 Develooped by
-Guénoël Andrieux
-Najib Kebdani
+* Guénoël Andrieux
+* Najib Kebdani
 
 ## Usage
 _printf is the same function as existing printf standard library in c but with less use case and more bugs, use at your own risk !
@@ -21,8 +21,8 @@ The string is written in a simple template language: characters are copied liter
 Syntax: _printf("Your age is %d", age);
 
 ### Different kind of specifiers:
-%c character
-%s String
-%i Integer number
-%d Decimal number
+* %c character
+* %s String
+* %i Integer number
+* %d Decimal number
 That’s all for now !
