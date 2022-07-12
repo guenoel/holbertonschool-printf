@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
 				}
 			}
 
-			if (tabtype[j].form == 0)
+			if (tabtype[j].form == 0 && format[i + 1])
 				c1 += _putchar('%');
 		}
 		else
