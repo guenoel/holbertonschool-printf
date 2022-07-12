@@ -44,6 +44,6 @@ int printnum(int num)
 }
 int printpercent(va_list args __attribute__((unused)))
 {
-	write(1, "%%", 2);
+	write(1, "%", 1);
 	return (2);
 }
