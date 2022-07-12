@@ -45,11 +45,12 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
-			if (format[i] == '%')
+			/*if (format[i] == '%')
 			{
 			_putchar('%');
 			i += 1;
-			}
+			break;
+			}*/
 		}
 		else
 		{
