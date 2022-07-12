@@ -7,7 +7,7 @@
  * Return: number of char printed
  */
 
-int _putstring(char* s)
+int _putstring(char *s)
 {
 	int i;
 

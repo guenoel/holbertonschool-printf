@@ -2,8 +2,7 @@
 
 /**
  * _printf - fonction printf
- * @n: numbers of characters
- * @s: string
+ * @format: ce qu'il y a entre guillemets
  *
  * Return: ?
  */
@@ -11,28 +10,16 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, j = 0, c1 = 0;
-
 	va_list argp;
 	match tabtype[] = {
-		{'c',printchar},
-		{'s',printstring},
-		{'%',printpercent},
-		/*
-		   {'d',printint},
-		   {'i',printint},
-		   {'u',printint},
-		   {'o',printint},
-		   {'x',printint},
-		   {'X',printint},
-		   {'p',printint},
-		   */
+		{'c', printchar},
+		{'s', printstring},
+		{'%', printpercent},
 		{0, NULL},
 	};
 
-
-	if ((format == NULL))
+	if (format == 0)
 		return (-1);
-
 	va_start(argp, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -40,7 +27,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == 0)
 				return (-1);
-			for(j = 0; tabtype[j].form != 0; j++)
+			for (j = 0; tabtype[j].form != 0; j++)
 			{
 				if (tabtype[j].form == format[i + 1])
 				{
@@ -53,14 +40,7 @@ int _printf(const char *format, ...)
 				c1 += _putchar('%');
 		}
 		else
-		{
-			/*	if (format[i - 1] == '%')
-				{
-				_putchar('%');
-				}
-				*/
 			c1 += _putchar(format[i]);
-		}
 	}
 	va_end(argp);
 	return (c1);

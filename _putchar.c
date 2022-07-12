@@ -2,13 +2,12 @@
 
 /**
  * _putchar - writes a variable lenght of char
- * @n: number of char
- * @s: string to print
+ * @c: caractere a imprimer
  *
- * Return: int to reproduce printf
+ * Return: nombre de caracteres imprimés
  */
 
 int _putchar(char c)
 {
-	return write(1, &c, 1);
+	return (write(1, &c, 1));
 }
