@@ -52,6 +52,7 @@ int printint(va_list args)
 		num1 = ((num /10) * (-1));
 		num2 = ((num % 10) * (-1));
 		i += _putchar('-');
+		if (num1 != 0)
 	i += printnum(num1);
 	i += printnum(num2);
 	}
