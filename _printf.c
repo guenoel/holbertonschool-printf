@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 	};
 
 
-	if (format == NULL)
+	if ((format == NULL))
 		return (-1);
 
 	va_start(argp, format);
@@ -38,7 +38,8 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-
+			if (format[i + 1] == 0)
+				return (-1);
 			for(j = 0; tabtype[j].form != 0; j++)
 			{
 				if (tabtype[j].form == format[i + 1])
@@ -48,7 +49,6 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
-
 			if (tabtype[j].form == 0 && format[i + 1])
 				c1 += _putchar('%');
 		}
