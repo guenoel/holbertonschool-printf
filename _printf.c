@@ -48,7 +48,7 @@ int _printf(const char *format, ...)
 			{
 				;
 			}
-			c1 = c1 + (tabtype[j].f(argp));
+			c1 = (tabtype[j].f(argp));
 			i = i + 2;
 		}
 		c2 = c2 + (_putchar(format[i]));
