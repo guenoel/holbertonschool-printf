@@ -17,6 +17,11 @@ int _printf(const char *format, ...)
 		{'%', printpercent},
 		{'d', printint},
 		{'i', printint},
+		{'u', printint},
+		{'o', printint},
+		{'x', printint},
+		{'X', printint},
+		{'p', printint},
 		{0, NULL},
 	};
 
