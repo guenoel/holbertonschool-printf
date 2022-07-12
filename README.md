@@ -1,2 +1,3 @@
 # holbertonschool-printf
-Projet Printf
+Man printf
+
