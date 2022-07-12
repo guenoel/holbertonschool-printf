@@ -17,16 +17,14 @@ int _printf(const char *format, ...)
 		{'c',printchar},
 		{'s',printstring},
 		{'%',printpercent},
-		/*
-		   {'d',printint},
-		   {'i',printint},
-		   {'u',printint},
-		   {'o',printint},
-		   {'x',printint},
-		   {'X',printint},
-		   {'p',printint},
-		   {'r',printint},
-		   */
+		{'d',printint},
+		{'i',printint},
+		{'u',printint},
+		{'o',printint},
+		{'x',printint},
+		{'X',printint},
+		{'p',printint},
+		{'r',printint},
 		{0, NULL},
 	};
 

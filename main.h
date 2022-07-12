@@ -19,5 +19,6 @@ int _printf(const char *format, ...);
 int printchar(va_list args);
 int printstring(va_list args);
 int printint(va_list args);
-void printnum(int num);
+int printnum(int num);
+int printpercent(va_list args);
 #endif /* MAIN_H */

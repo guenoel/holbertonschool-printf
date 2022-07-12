@@ -14,7 +14,7 @@ int printstring(va_list args)
 
 	s = va_arg(args, char*);
 	if (s == NULL)
-		return (write(1, "(null)", 6);
+		return (write(1, "(null)", 6));
 	for(i = 0; s[i] != '\0'; i++)
 		_putchar(s[i]);
 	return (i);
@@ -22,19 +22,27 @@ int printstring(va_list args)
 
 int printint(va_list args)
 {
+	int i;
+
 	int num = va_arg(args, int);
-	printnum(num);
-	return (sizeof(int));
+	i = printnum(num);
+	return (i);
 }
 
-void printnum(int num)
+int printnum(int num)
 {
+	int i;
+
 	if ((num / 10) > 0)
-		printnum(num / 10);
-	_putchar((num % 10) + '0');
-	return;
+		i = printnum(num / 10);
+	else
+	{
+		i = 0;
+	}
+	i += _putchar((num % 10) + '0');
+	return (i);
 }
-int printpercent(void)
+int printpercent(va_list args __attribute__((unused)))
 {
 	write(1, "%%", 2);
 	return (2);
