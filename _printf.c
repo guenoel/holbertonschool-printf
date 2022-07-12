@@ -53,8 +53,6 @@ int _printf(const char *format, ...)
 		}
 		c2 = c2 + (_putchar(format[i]));
 	}
-		printf("compteur des arguments: %i\n", c1);
-		printf("compteur de format: %i\n", c2);
 	va_end(argp);
 	return (c1 + c2);
 }
