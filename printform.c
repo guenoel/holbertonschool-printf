@@ -1,5 +1,6 @@
 #include "main.h"
 
+
 int printchar(va_list args)
 {
 	char c = va_arg(args, int);
@@ -12,6 +13,8 @@ int printstring(va_list args)
 	char* s;
 
 	s = va_arg(args, char*);
+	if (s == NULL)
+		return (write(1, "(null)", 6);
 	for(i = 0; s[i] != '\0'; i++)
 		_putchar(s[i]);
 	return (i);
@@ -31,4 +34,8 @@ void printnum(int num)
 	_putchar((num % 10) + '0');
 	return;
 }
-
+int printpercent(void)
+{
+	write(1, "%%", 2);
+	return (2);
+}

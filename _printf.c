@@ -16,26 +16,23 @@ int _printf(const char *format, ...)
 	match tabtype[] = {
 		{'c',printchar},
 		{'s',printstring},
+		{'%',printpercent},
 		/*
-		{'d',printint},
-		{'i',printint},
-		{'u',printint},
-		{'o',printint},
-		{'x',printint},
-		{'X',printint},
-		{'p',printint},
-		{'%',printint},
-		{'r',printint},
-		*/
+		   {'d',printint},
+		   {'i',printint},
+		   {'u',printint},
+		   {'o',printint},
+		   {'x',printint},
+		   {'X',printint},
+		   {'p',printint},
+		   {'r',printint},
+		   */
 		{0, NULL},
 	};
 
 
 	if (format == NULL)
-	{
-		_putchar('\n');
 		return (-1);
-	}
 
 	va_start(argp, format);
 	for (i = 0; format[i] != '\0'; i++)
