@@ -4,19 +4,20 @@ Synopsis: la fonction _printf imprime un caractère ou une chaîne de caractère
 
 Chaîne de format:
 
-Le format de conversion est indiqué par une chaîne de caractères, commençant toujours avec une entrée et se terminant 
-toujours par une sortie.
-La chaîne de format est composée d'indicateurs : les caractères ordinaires (différents de %), qui sont copiés sans 
-modification sur la sortie, et les spécifications de conversion, qui sont mises en liens  avec les arguments 
-suivants. Les spécifications de conversion sont introduites par le caractère %, et se terminent par un indicateur de 
-conversion. 
+Le format de conversion est indiqué par une chaîne de caractères, commençant toujours avec une entrée et 
+se terminant toujours par une sortie.
+La chaîne de format est composée d'indicateurs : les caractères ordinaires (différents de %), qui sont copiés sans modification sur la sortie, et les spécifications de conversion, qui sont mises en liens avec les arguments 
+suivants. Les spécifications de conversion sont introduites par le caractère %, et se terminent par un 
+inditeur de conversion. 
 Entre eux, peut se trouver aucuns ou plusieurs attributs avec une valeur facultatif de largeur minimal de 
 champ, une valeur facultatif de précision, et une possibilité d'un changement de longueur.
 
 Les arguments doivent correspondre apres la nomination des types avec les indicateurs de conversion. 
 Par défaut les arguments sont pris dans l'ordre indiqué, où chaque « * » et chaque indicateur de conversion 
-réclame un nouvel argument (et où l'insuffisance en arguments est une erreur). On peut aussi préciser explicitement quel argument prendre, en écrivant, à chaque conversion, « %m$ » au lieu de « % », et « *m$ » au lieu de « * ». L'entier décimal m indique la position dans la liste d'arguments, l'indexation commençant à 1. Ainsi,
+réclame un nouvel argument (et où l'insuffisance en arguments est une erreur). On peut aussi préciser 
+explicitement quel argument prendre, en écrivant, à chaque conversion, « %m$ » au lieu de « % », et « *m$ » au lieu de « * ». L'entier décimal m indique la position dans la liste d'arguments, l'indexation commençant à 1. Ainsi,
 
+Exemple:
 
 printf("%*d", width, num);
 
