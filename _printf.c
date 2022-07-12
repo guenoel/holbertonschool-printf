@@ -24,7 +24,6 @@ int _printf(const char *format, ...)
 		{'x',printint},
 		{'X',printint},
 		{'p',printint},
-		{'r',printint},
 		{0, NULL},
 	};
 
@@ -46,6 +45,8 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
+			if (format[i] == '%')
+			_putchar('%');
 		}
 		else
 		{
