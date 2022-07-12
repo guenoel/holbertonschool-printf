@@ -17,13 +17,15 @@ int _printf(const char *format, ...)
 		{'c',printchar},
 		{'s',printstring},
 		{'%',printpercent},
-		{'d',printint},
-		{'i',printint},
-		{'u',printint},
-		{'o',printint},
-		{'x',printint},
-		{'X',printint},
-		{'p',printint},
+		/*
+		   {'d',printint},
+		   {'i',printint},
+		   {'u',printint},
+		   {'o',printint},
+		   {'x',printint},
+		   {'X',printint},
+		   {'p',printint},
+		   */
 		{0, NULL},
 	};
 
@@ -36,6 +38,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+
 			for(j = 0; tabtype[j].form != 0; j++)
 			{
 				if (tabtype[j].form == format[i + 1])
@@ -45,13 +48,17 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
+
+			if (tabtype[j].form == 0)
+				c1 += _putchar('%');
 		}
 		else
 		{
-			if (format[i - 1] == '%')
-			{
-			_putchar('%');
-			}
+			/*	if (format[i - 1] == '%')
+				{
+				_putchar('%');
+				}
+				*/
 			c1 += _putchar(format[i]);
 		}
 	}
