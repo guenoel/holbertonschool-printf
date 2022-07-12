@@ -42,17 +42,26 @@ int printstring(va_list args)
 
 int printint(va_list args)
 {
-	int i = 0;
+	int i = 0, num1, num2;
 	/*unsigned int j;*/
 
 	int num = va_arg(args, int);
 
 	if (num < 0)
 	{
+		num1 = ((num /10) * (-1));
+		num2 = ((num % 10) * (-1));
 		i += _putchar('-');
-		num = _abs(num);
+	i += printnum(num1);
+	i += printnum(num2);
 	}
+	else
+	{
 	i += printnum(num);
+	}
+/*	printf("int min = %i\n", INT_MIN);
+	printf("num1 = %i\n", num1);
+	printf("num2 = %i\n", num2);*/
 	return (i);
 }
 
