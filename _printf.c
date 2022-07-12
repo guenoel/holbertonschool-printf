@@ -53,8 +53,6 @@ int _printf(const char *format, ...)
 		}
 		c2 = c2 + (_putchar(format[i]));
 	}
-	printf("longueur c1 : %i\n", c1);
-	printf("longueur c2 : %i\n", c2);
 	va_end(argp);
 	return (c1 + c2);
 }
