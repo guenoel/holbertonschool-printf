@@ -10,16 +10,9 @@
 
 int _printf(const char *format, ...)
 {
-	int i, j, c1, c2;
+	int i = 0, j = 0, c1 = 0;
 
 	va_list argp;
-
-	if (format == NULL)
-	{
-		_putchar('\n');
-		return (-1);
-	}
-
 	match tabtype[] = {
 		{'c',printchar},
 		{'s',printstring},
@@ -36,8 +29,15 @@ int _printf(const char *format, ...)
 		*/
 		{0, NULL},
 	};
+
+
+	if (format == NULL)
+	{
+		_putchar('\n');
+		return (-1);
+	}
+
 	va_start(argp, format);
-	c1 = 0;
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
@@ -58,6 +58,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(argp);
-	printf("compteur des arguments: %i\n", c1);
 	return (c1);
 }
