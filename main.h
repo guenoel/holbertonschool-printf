@@ -6,6 +6,11 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <string.h>
+typedef struct matchs { 
+	char form; 
+	int (*f)(va_list args); 
+} match;
+
 int c_end_s(char *s);
 int _count(const char *c);
 int _putchar(char c);

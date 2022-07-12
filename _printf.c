@@ -11,15 +11,19 @@
 int _printf(const char *format, ...)
 {
 	int i, j, c1, c2;
-	struct match {
-		char form;
-		int (*f)(va_list args);
-	};
 
 	va_list argp;
-	struct match tabtype[] = {
+
+	if (format == NULL)
+	{
+		_putchar('\n');
+		return (-1);
+	}
+
+	match tabtype[] = {
 		{'c',printchar},
 		{'s',printstring},
+		/*
 		{'d',printint},
 		{'i',printint},
 		{'u',printint},
@@ -29,30 +33,31 @@ int _printf(const char *format, ...)
 		{'p',printint},
 		{'%',printint},
 		{'r',printint},
+		*/
 		{0, NULL},
 	};
-	c1 = 0;
-	c2 = 0;
 	va_start(argp, format);
-	if (format == NULL)
-	{
-		_putchar('\n');
-		return (-1);
-	}
-
+	c1 = 0;
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
-			for(j = 0; (tabtype[j].form != 0) && (tabtype[j].form != format[i + 1]); j++)
+			for(j = 0; tabtype[j].form != 0; j++)
 			{
-				;
+				if (tabtype[j].form == format[i + 1])
+				{
+					c1 += tabtype[j].f(argp);
+					i += 1;
+					break;
+				}
 			}
-			c1 = c1 + (tabtype[j].f(argp));
-			i = i + 2;
 		}
-		c2 = c2 + (_putchar(format[i]));
+		else
+		{
+			c1 += _putchar(format[i]);
+		}
 	}
 	va_end(argp);
-	return (c1 + c2);
+	printf("compteur des arguments: %i\n", c1);
+	return (c1);
 }

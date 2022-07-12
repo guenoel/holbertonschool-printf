@@ -11,7 +11,10 @@ int main(void)
     int len2;
     unsigned int ui;
     void *addr;
-
+	
+	_printf("%c is the character %s", 'H', "Hello");
+	return (0);
+/*
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
     ui = (unsigned int)INT_MAX + 1024;
@@ -39,4 +42,5 @@ int main(void)
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
     return (0);
+	*/
 }
