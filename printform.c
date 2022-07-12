@@ -49,20 +49,17 @@ int printint(va_list args)
 
 	if (num < 0)
 	{
-		num1 = ((num /10) * (-1));
+		num1 = ((num / 10) * (-1));
 		num2 = ((num % 10) * (-1));
 		i += _putchar('-');
 		if (num1 != 0)
-	i += printnum(num1);
-	i += printnum(num2);
+			i += printnum(num1);
+		i += printnum(num2);
 	}
 	else
 	{
-	i += printnum(num);
+		i += printnum(num);
 	}
-/*	printf("int min = %i\n", INT_MIN);
-	printf("num1 = %i\n", num1);
-	printf("num2 = %i\n", num2);*/
 	return (i);
 }
 
